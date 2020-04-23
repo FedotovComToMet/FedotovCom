@@ -1,0 +1,17 @@
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\bin\Debug\DB.exe.config
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\bin\Debug\DB.exe
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\bin\Debug\DB.pdb
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\MainWindow.g.cs
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\App.g.cs
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB_MarkupCompile.cache
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB_MarkupCompile.lref
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\MainWindow.baml
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.g.resources
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.Properties.Resources.resources
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.csproj.GenerateResource.cache
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.exe
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.pdb
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\pages\Page1.g.cs
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\pages\Page1.baml
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\DB.csprojAssemblyReference.cache
+C:\Users\mi\Desktop\учеба\Ларионова\учебная практика\DB\DB\obj\Debug\pages\Page2.g.cs
