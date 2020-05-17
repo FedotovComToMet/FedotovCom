@@ -12,51 +12,43 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.
+using System.Data.SqlClient;
 using Students.Pages;
+using static Students.Interface;
 
 namespace Students
 {
     public partial class Page1 : Page
     {
-        private string connectionString;
-        public Page1()
+public Page1()
         {
             InitializeComponent();
-            connectionString = @"Data Source = FEDOTOR3000\SQLEXPRESS; " +
-          "Initial Catalog = Students; " + "Integrated Security = true;";
         }
 
+      
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SighIn(object sender, RoutedEventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
+            List<Rols> rols = SE.Rols.ToList();
+            foreach (Rols r in rols)
             {
-                connection.Open();
-                MessageBox.Show("Подключение выполнено!");
-                string query = "SELECT login, password, role FROM dbo.Role WHERE login=@login AND password=@password";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@login", login.Text);
-                command.Parameters.AddWithValue("@password", password.Text);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                
+                if (r.Login == login.Text && r.Password == Pas.Password)
                 {
-                    MessageBox.Show("Пользователь найден!"); return;
+                    MessageBox.Show("успешно");
+                    Roli = r.NameRole;
+                    MF.Navigate(new MainMenu1());
                 }
-                MessageBox.Show("Пользователь не найден!");
-            }
-            catch (SqlException ex)
-
-            {
-                MessageBox.Show(ex.Message);
             }
         }
+        private void Registration(object sender, RoutedEventArgs e)
+        {
+            MF.Content = new Page2();
+        }
 
-
-    }
-}
-
-
+        private void instruction(object sender, RoutedEventArgs e)
+        {
+            MF.Content = new Instr();
+        }
     }
 }

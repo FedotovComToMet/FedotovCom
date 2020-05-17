@@ -13,18 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Students.Pages;
-
+using static Students.Interface;
 namespace Students
+
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Page1());
+            SE.SaveChanges();
+            MF = MainFrame;
+            MF.Navigate(new Page1());
+
         }
     }
 }

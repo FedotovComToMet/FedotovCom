@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище StudentsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department1">
+    <Key>
+      <PropertyRef Name="NumberGroup" />
+    </Key>
+    <Property Name="NamberDepartment" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Manager" Type="nchar" MaxLength="10" />
+    <Property Name="idManager" Type="nchar" MaxLength="10" />
+    <Property Name="NumberGroup" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exam1">
+    <Key>
+      <PropertyRef Name="idExam" />
+    </Key>
+    <Property Name="NamberStudent" Type="nchar" MaxLength="15" />
+    <Property Name="idExam" Type="int" Nullable="false" />
+    <Property Name="idSubgect" Type="int" />
+    <Property Name="Semester" Type="nchar" MaxLength="1" />
+    <Property Name="Access" Type="float" />
+    <Property Name="Estimation" Type="real" />
+    <Property Name="DateDelivery" Type="date" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="NumberGroup" />
+    </Key>
+    <Property Name="NumberGroup" Type="int" Nullable="false" />
+    <Property Name="Year" Type="nchar" MaxLength="10" />
+    <Property Name="NumberDepartments" Type="nchar" MaxLength="10" />
+    <Property Name="TypeGroup" Type="float" />
+    <Property Name="idCurator" Type="nchar" MaxLength="10" />
+    <Property Name="idSpecialties" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Rols">
+    <Key>
+      <PropertyRef Name="idTeacher" />
+    </Key>
+    <Property Name="idTeacher" Type="int" Nullable="false" />
+    <Property Name="Login" Type="nchar" MaxLength="15" />
+    <Property Name="Password" Type="nchar" MaxLength="11" />
+    <Property Name="NameRole" Type="nchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Specialty">
+    <Key>
+      <PropertyRef Name="idSpecialties" />
+    </Key>
+    <Property Name="idSpecialties" Type="int" Nullable="false" />
+    <Property Name="Year" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="NameSpec" Type="nchar" MaxLength="10" />
+    <Property Name="NumberDepartment" Type="nchar" MaxLength="1" />
+    <Property Name="NumberGroup" Type="int" />
+    <Property Name="Type" Type="nchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="NamberStudent" />
+    </Key>
+    <Property Name="NamberStudent" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="15" />
+    <Property Name="FerstName" Type="nchar" MaxLength="15" />
+    <Property Name="MiddleName" Type="nchar" MaxLength="15" />
+    <Property Name="Bithday" Type="date" />
+    <Property Name="Adddress" Type="nchar" MaxLength="15" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="12" />
+    <Property Name="PassportSeries" Type="int" />
+    <Property Name="PassportNamber" Type="int" />
+  </EntityType>
+  <EntityType Name="Studying">
+    <Key>
+      <PropertyRef Name="NamberStudent" />
+    </Key>
+    <Property Name="NamberStudent" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="NumberGroup" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Admission" Type="date" />
+    <Property Name="Allocation" Type="date" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="idSubject" />
+    </Key>
+    <Property Name="idSubject" Type="int" Nullable="false" />
+    <Property Name="nameSubject" Type="nchar" MaxLength="10" />
+    <Property Name="idSpecialties" Type="nchar" MaxLength="10" />
+    <Property Name="Time" Type="nchar" MaxLength="10" />
+    <Property Name="idTeacher" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubSpec">
+    <Key>
+      <PropertyRef Name="idTeacher" />
+    </Key>
+    <Property Name="IdSubject" Type="int" Nullable="false" />
+    <Property Name="idTeacher" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="idTeacher" />
+    </Key>
+    <Property Name="idTeacher" Type="int" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="15" />
+    <Property Name="FerstName" Type="nchar" MaxLength="15" />
+    <Property Name="MiddleName" Type="nchar" MaxLength="15" />
+    <Property Name="Experience" Type="nchar" MaxLength="10" />
+    <Property Name="Discharge" Type="nchar" MaxLength="10" />
+    <Property Name="Category" Type="nchar" MaxLength="10" />
+    <Property Name="Bithday" Type="date" />
+  </EntityType>
+  <EntityType Name="TS">
+    <Key>
+      <PropertyRef Name="idTeacher" />
+    </Key>
+    <Property Name="idTeacher" Type="int" Nullable="false" />
+    <Property Name="Year" Type="nchar" MaxLength="5" />
+    <Property Name="idSubgect" Type="int" Nullable="false" />
+    <Property Name="Salary" Type="nchar" MaxLength="10" />
+    <Property Name="Time" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Exam1_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Exam1" Type="Self.Exam1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="NamberStudent" />
+      </Principal>
+      <Dependent Role="Exam1">
+        <PropertyRef Name="NamberStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rols_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Rols" Type="Self.Rols" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="idTeacher" />
+      </Principal>
+      <Dependent Role="Rols">
+        <PropertyRef Name="idTeacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specialty_Department1">
+    <End Role="Department1" Type="Self.Department1" Multiplicity="0..1" />
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department1">
+        <PropertyRef Name="NumberGroup" />
+      </Principal>
+      <Dependent Role="Specialty">
+        <PropertyRef Name="NumberGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specialty_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="NumberGroup" />
+      </Principal>
+      <Dependent Role="Specialty">
+        <PropertyRef Name="NumberGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Studying_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="Studying" Type="Self.Studying" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="NumberGroup" />
+      </Principal>
+      <Dependent Role="Studying">
+        <PropertyRef Name="NumberGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Studying_Student1">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Studying" Type="Self.Studying" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="NamberStudent" />
+      </Principal>
+      <Dependent Role="Studying">
+        <PropertyRef Name="NamberStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSpec_Specialty1">
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="1" />
+    <End Role="SubSpec" Type="Self.SubSpec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialty">
+        <PropertyRef Name="idSpecialties" />
+      </Principal>
+      <Dependent Role="SubSpec">
+        <PropertyRef Name="IdSubject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSpec_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="SubSpec" Type="Self.SubSpec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="idSubject" />
+      </Principal>
+      <Dependent Role="SubSpec">
+        <PropertyRef Name="IdSubject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TS_Exam11">
+    <End Role="Exam1" Type="Self.Exam1" Multiplicity="1" />
+    <End Role="TS" Type="Self.TS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exam1">
+        <PropertyRef Name="idExam" />
+      </Principal>
+      <Dependent Role="TS">
+        <PropertyRef Name="idSubgect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TS_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="TS" Type="Self.TS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="idSubject" />
+      </Principal>
+      <Dependent Role="TS">
+        <PropertyRef Name="idSubgect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TS_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="TS" Type="Self.TS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="idTeacher" />
+      </Principal>
+      <Dependent Role="TS">
+        <PropertyRef Name="idSubgect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище StudentsModelContainer">
+    <EntitySet Name="Department1" EntityType="Self.Department1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exam1" EntityType="Self.Exam1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rols" EntityType="Self.Rols" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialty" EntityType="Self.Specialty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Studying" EntityType="Self.Studying" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubSpec" EntityType="Self.SubSpec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TS" EntityType="Self.TS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Exam1_Student" Association="Self.FK_Exam1_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Exam1" EntitySet="Exam1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rols_Teacher" Association="Self.FK_Rols_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Rols" EntitySet="Rols" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specialty_Department1" Association="Self.FK_Specialty_Department1">
+      <End Role="Department1" EntitySet="Department1" />
+      <End Role="Specialty" EntitySet="Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specialty_Group" Association="Self.FK_Specialty_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Specialty" EntitySet="Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Studying_Group" Association="Self.FK_Studying_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Studying" EntitySet="Studying" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Studying_Student1" Association="Self.FK_Studying_Student1">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Studying" EntitySet="Studying" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSpec_Specialty1" Association="Self.FK_SubSpec_Specialty1">
+      <End Role="Specialty" EntitySet="Specialty" />
+      <End Role="SubSpec" EntitySet="SubSpec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSpec_Subject" Association="Self.FK_SubSpec_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="SubSpec" EntitySet="SubSpec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TS_Exam11" Association="Self.FK_TS_Exam11">
+      <End Role="Exam1" EntitySet="Exam1" />
+      <End Role="TS" EntitySet="TS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TS_Subject" Association="Self.FK_TS_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="TS" EntitySet="TS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TS_Teacher" Association="Self.FK_TS_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="TS" EntitySet="TS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

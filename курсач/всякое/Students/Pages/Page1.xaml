@@ -5,53 +5,64 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Students"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page1" Height="464" Width="876">
+            Title="Page1" >
+    <Page.Background>
+        <ImageBrush   />
+    </Page.Background>
+    
+    
 
     <Grid>
-        <Grid RenderTransformOrigin="0.497,0.287">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="128"/>
-                <RowDefinition Height="49*"/>
-                <RowDefinition Height="57*"/>
-                <RowDefinition Height="17.6"/>
-            </Grid.RowDefinitions>
-            <Image Source="C:\Users\mi\Desktop\учеба\Ларионова\курсач\фон.jpg" Margin="-402,65,-398,-95" Grid.RowSpan="4" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="0.107"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0.398"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <TextBlock Text="Базаданных данных студентов" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="154,23,171,55" Height="50" Width="551" RenderTransformOrigin="0.499,0.492" FontFamily="Trajan Pro 3"/>
-            <TextBlock HorizontalAlignment="Left" Margin="331,111,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="59" Background="#FF6F0977" FontFamily="Trajan Pro 3" RenderTransformOrigin="0.508,0.578" FontStretch="Expanded"/>
-            <TextBlock HorizontalAlignment="Left" Margin="331,81,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="59" Background="#FF6F0977" FontFamily="Trajan Pro 3"/>
-            <TextBox x:Name="login" HorizontalAlignment="Left" Height="26" Margin="398,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" Grid.Row="1" CaretBrush="#FF510A5D"/>
-            <TextBox x:Name="password" HorizontalAlignment="Left" Height="26" Margin="398,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.518,-0.616" Grid.Row="1" CaretBrush="#FF400445">
-                <TextBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.348"/>
-                        <TranslateTransform X="-0.386" Y="-0.023"/>
-                    </TransformGroup>
-                </TextBox.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="433*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="443*"/>
+        </Grid.ColumnDefinitions>
+        <Grid RenderTransformOrigin="0.497,0.287" Grid.ColumnSpan="3" Margin="0,-10,0,10">
+            <TextBlock HorizontalAlignment="Left" Margin="421,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="166" Background="#7F2F516C" FontFamily="Trajan Pro 3" RenderTransformOrigin="0.508,0.578" FontStretch="Expanded" FontSize="35"><Run Text="Пароль"/><Run Text=":"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="421,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="166" Background="#7F2F516C" FontFamily="Trajan Pro 3" FontSize="30"><Run FontSize="40" Text="Логин"/><Run FontSize="40" Text=":"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBox x:Name="login" HorizontalAlignment="Left" Height="52" Margin="643,281,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" CaretBrush="#FF97A0E0" FontSize="30">
+                <TextBox.BorderBrush>
+                    <ImageBrush/>
+                </TextBox.BorderBrush>
+                <TextBox.Background>
+                    <SolidColorBrush Color="#FF2F516C" Opacity="0.5"/>
+                </TextBox.Background>
             </TextBox>
-            <Button Content="Войти" HorizontalAlignment="Left" Margin="331,5.8,0,0" VerticalAlignment="Top" Width="205" Click="Button_Click" Grid.Row="2" Height="37" Background="#FFA200BF" FontFamily="Trajan Pro 3"/>
-            <Grid Panel.ZIndex="-2" Margin="0,-11,0,7">
+            <Button Content="Войти" HorizontalAlignment="Left" Margin="421,420,0,0" VerticalAlignment="Top" Width="487" Click="SighIn" Height="74" Background="#8C2F516C" FontFamily="Trajan Pro 3" FontSize="70">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+            </Button>
+            <Grid Panel.ZIndex="-2" Margin="0,10,0,0" >
                 <Grid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFECA586" Offset="0"/>
-                        <GradientStop Color="#FFF686FF" Offset="0.799"/>
-                        <GradientStop Color="#FF111011"/>
-                        <GradientStop Color="#FE310531" Offset="0.141"/>
-                        <GradientStop Color="#FF3D0942" Offset="0.992"/>
-                    </LinearGradientBrush>
+                    <ImageBrush ImageSource="Вход.jpg"/>
                 </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="78*"/>
+                    <ColumnDefinition Width="77*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="регистрация" HorizontalAlignment="Left" Margin="506,537,0,0" VerticalAlignment="Top" Width="327" Click="Registration" Height="64" Background="#841E3446" RenderTransformOrigin="0.501,0.393" FontSize="30" Grid.ColumnSpan="2">
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+                <Button Content="Ознакомьтесь с руководством по эксплотации приложения" HorizontalAlignment="Left" Margin="423,643,0,0" VerticalAlignment="Top" Width="481" Height="38" Grid.ColumnSpan="2" Background="#841E3446" Foreground="White" Click="instruction">
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+
             </Grid>
+
+            <PasswordBox x:Name="Pas" HorizontalAlignment="Left" Margin="643,338,0,0" VerticalAlignment="Top" Width="268" Height="49" FontSize="30" Background="#7F2F516C">
+                <PasswordBox.BorderBrush>
+                    <ImageBrush/>
+                </PasswordBox.BorderBrush>
+            </PasswordBox>
         </Grid>
+
+
     </Grid>
 </Page>

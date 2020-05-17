@@ -1,0 +1,405 @@
+﻿<Page x:Class="Students.Pages.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Students.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenu">
+
+    <Grid Margin="0,0,0,-0.4">
+        <Grid.Background>
+            <ImageBrush ImageSource="00000035166.jpg"/>
+        </Grid.Background>
+
+        <Grid HorizontalAlignment="Left" Height="450" Name="UserInfo" VerticalAlignment="Top" Width="800" Margin="0,0,0,-0.4">
+
+            <Button Content="Открыть таблицу Студенты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="90" Click="open_student" Margin="0,105,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infStud1" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="UserDataStudents" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№ Студента"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding FerstName}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding MiddleName}" ClipboardContentBinding="{x:Null}" Header="Очество"/>
+                        <DataGridTextColumn Binding="{Binding Bithday}" ClipboardContentBinding="{x:Null}" Header="ДР"/>
+                        <DataGridTextColumn Binding="{Binding Adress}" ClipboardContentBinding="{x:Null}" Header="Адресс"/>
+                        <DataGridTextColumn Binding="{Binding PhoneNumber}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Группы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="90" Click="open_grup" Margin="0,200,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infGrupp1" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="UserDataGrupps" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Текущий Год"/>
+                        <DataGridTextColumn Binding="{Binding NumberDepartments}" ClipboardContentBinding="{x:Null}" Header="Отделение"/>
+                        <DataGridTextColumn Binding="{Binding TypeGroup}" ClipboardContentBinding="{x:Null}" Header="Тип"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="41,28,0,0" TextWrapping="Wrap" Text="User menu" VerticalAlignment="Top" Height="61" Width="84" TextAlignment="Center" FontSize="20" FontWeight="Bold"/>
+
+
+
+        </Grid>
+
+
+
+        <Grid HorizontalAlignment="Left" Height="450" Name="ModeratorInfo" VerticalAlignment="Top" Width="800" Margin="0,0,0,-0.4" d:IsHidden="True">
+            <Button Content="Открыть таблицу Студенты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="49" Click="open_student">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infStud3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratotDataStudents" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№ Студента"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding FerstName}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding MiddleName}" ClipboardContentBinding="{x:Null}" Header="Очество"/>
+                        <DataGridTextColumn Binding="{Binding Bithday}" ClipboardContentBinding="{x:Null}" Header="ДР"/>
+                        <DataGridTextColumn Binding="{Binding Adress}" ClipboardContentBinding="{x:Null}" Header="Адресс"/>
+                        <DataGridTextColumn Binding="{Binding PhoneNumber}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
+                        <DataGridTextColumn Binding="{Binding PassportSeries}" ClipboardContentBinding="{x:Null}" Header="Паспорт Серия"/>
+                        <DataGridTextColumn Binding="{Binding PassportNumber}" ClipboardContentBinding="{x:Null}" Header="Паспорт Номер"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Группы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_grup" Margin="0,51,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infGrupp3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataGrupps" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Текущий Год"/>
+                        <DataGridTextColumn Binding="{Binding NumberDepartments}" ClipboardContentBinding="{x:Null}" Header="Отделение"/>
+                        <DataGridTextColumn Binding="{Binding TypeGroup}" ClipboardContentBinding="{x:Null}" Header="Тип"/>
+                        <DataGridTextColumn Binding="{Binding idCurator}" ClipboardContentBinding="{x:Null}" Header="id Куратора"/>
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="id Специальности"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Учащийся" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_uch" Margin="0,101,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infUch3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataUch" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№Студента"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№Группы"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding Admission}" ClipboardContentBinding="{x:Null}" Header="Дата Зачисления"/>
+                        <DataGridTextColumn Binding="{Binding Allocation}" ClipboardContentBinding="{x:Null}" Header="Дата Отчисления"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Предметы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_pred" Margin="0,151,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infPred3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataPred" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idSubject}" ClipboardContentBinding="{x:Null}" Header="id Предмета"/>
+                        <DataGridTextColumn Binding="{Binding nameSubject}" ClipboardContentBinding="{x:Null}" Header="Название"/>
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="id Специальности"/>
+                        <DataGridTextColumn Binding="{Binding Time}" ClipboardContentBinding="{x:Null}" Header="Учебные Часы"/>
+                        <DataGridTextColumn Binding="{Binding idTeacher}" ClipboardContentBinding="{x:Null}" Header="id Учителя"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Преподователи" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_prepod" Margin="0,202,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infPrepod3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataPrepod" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idTeacher}" ClipboardContentBinding="{x:Null}" Header="id Учителя"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding FerstName}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding MiddleName}" ClipboardContentBinding="{x:Null}" Header="Очество"/>
+                        <DataGridTextColumn Binding="{Binding Experience}" ClipboardContentBinding="{x:Null}" Header="Стаж"/>
+                        <DataGridTextColumn Binding="{Binding Discharge}" ClipboardContentBinding="{x:Null}" Header="Разряд"/>
+                        <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                        <DataGridTextColumn Binding="{Binding Bithday}" ClipboardContentBinding="{x:Null}" Header="ДР"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Экзамены" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_exame" Margin="0,252,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infExam3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataExam" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№ Cтудента"/>
+                        <DataGridTextColumn Binding="{Binding idExam}" ClipboardContentBinding="{x:Null}" Header="id Экзамена"/>
+                        <DataGridTextColumn Binding="{Binding idSubgect}" ClipboardContentBinding="{x:Null}" Header="id Предмета"/>
+                        <DataGridTextColumn Binding="{Binding Semester}" ClipboardContentBinding="{x:Null}" Header="Семестр"/>
+                        <DataGridTextColumn Binding="{Binding Access}" ClipboardContentBinding="{x:Null}" Header="Допуск"/>
+                        <DataGridTextColumn Binding="{Binding Estimation}" ClipboardContentBinding="{x:Null}" Header="Оценка"/>
+                        <DataGridTextColumn Binding="{Binding DateDelivery}" ClipboardContentBinding="{x:Null}" Header="Дата Сдачи"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Отделения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_otdel" Margin="0,302,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infOtdel3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataOtdel" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberDepartment}" ClipboardContentBinding="{x:Null}" Header="№ Отделения"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding Manager}" ClipboardContentBinding="{x:Null}" Header="Заведующий"/>
+                        <DataGridTextColumn Binding="{Binding idManager}" ClipboardContentBinding="{x:Null}" Header="id Заведующего"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Специальности" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_cpec" Margin="0,352,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infCpec3" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="ModeratorDataCpec" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="id Специальности"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding NameSpec}" ClipboardContentBinding="{x:Null}" Header="Название"/>
+                        <DataGridTextColumn Binding="{Binding NumberDepartment}" ClipboardContentBinding="{x:Null}" Header="№ Отделения"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+                        <DataGridTextColumn Binding="{Binding Type}" ClipboardContentBinding="{x:Null}" Header="Тип"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="410" Name="AdminInfo" VerticalAlignment="Top" Width="614" Margin="176,20,0,0" d:IsHidden="True">
+
+            <Button Content="Открыть таблицу Студенты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="49" Click="open_student" Margin="-176,-17,0,0">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infStud" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataStudents" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№Студента"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding FerstName}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding MiddleName}" ClipboardContentBinding="{x:Null}" Header="Очество"/>
+                        <DataGridTextColumn Binding="{Binding Bithday}" ClipboardContentBinding="{x:Null}" Header="ДР"/>
+                        <DataGridTextColumn Binding="{Binding Adress}" ClipboardContentBinding="{x:Null}" Header="Адресс"/>
+                        <DataGridTextColumn Binding="{Binding PhoneNumber}" ClipboardContentBinding="{x:Null}" Header="Телефон"/>
+                        <DataGridTextColumn Binding="{Binding PassportSeries}" ClipboardContentBinding="{x:Null}" Header="Паспорт Серия"/>
+                        <DataGridTextColumn Binding="{Binding PassportNumber}" ClipboardContentBinding="{x:Null}" Header="Паспорт Номер"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Группы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_grup" Margin="-176,82,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infGrupp" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataGrupps" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№Группы"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Текущий Год"/>
+                        <DataGridTextColumn Binding="{Binding NumberDepartments}" ClipboardContentBinding="{x:Null}" Header="Отделение"/>
+                        <DataGridTextColumn Binding="{Binding TypeGroup}" ClipboardContentBinding="{x:Null}" Header="Тип"/>
+                        <DataGridTextColumn Binding="{Binding idCurator}" ClipboardContentBinding="{x:Null}" Header="idКуратора"/>
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="idСпециальности"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Учащийся" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_uch" Margin="-176,32,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infUch" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataUch" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№Студента"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№Группы"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding Admission}" ClipboardContentBinding="{x:Null}" Header="Дата Зачисления"/>
+                        <DataGridTextColumn Binding="{Binding Allocation}" ClipboardContentBinding="{x:Null}" Header="Дата Отчисления"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Предметы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_pred" Margin="-176,132,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infPred" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataPred" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idSubject}" ClipboardContentBinding="{x:Null}" Header="id Предмета"/>
+                        <DataGridTextColumn Binding="{Binding nameSubject}" ClipboardContentBinding="{x:Null}" Header="Название"/>
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="id Специальности"/>
+                        <DataGridTextColumn Binding="{Binding Time}" ClipboardContentBinding="{x:Null}" Header="Учебные Часы"/>
+                        <DataGridTextColumn Binding="{Binding idTeacher}" ClipboardContentBinding="{x:Null}" Header="id Учителя"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Преподователи" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_prepod" Margin="-176,183,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infPrepod" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataPrepod" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idTeacher}" ClipboardContentBinding="{x:Null}" Header="id Учителя"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding FerstName}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding MiddleName}" ClipboardContentBinding="{x:Null}" Header="Очество"/>
+                        <DataGridTextColumn Binding="{Binding Experience}" ClipboardContentBinding="{x:Null}" Header="Стаж"/>
+                        <DataGridTextColumn Binding="{Binding Discharge}" ClipboardContentBinding="{x:Null}" Header="Разряд"/>
+                        <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                        <DataGridTextColumn Binding="{Binding Bithday}" ClipboardContentBinding="{x:Null}" Header="ДР"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Экзамены" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_exame" Margin="-176,233,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infExam" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataExam" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberStudent}" ClipboardContentBinding="{x:Null}" Header="№Cтудента"/>
+                        <DataGridTextColumn Binding="{Binding idExam}" ClipboardContentBinding="{x:Null}" Header="idЭкзамена"/>
+                        <DataGridTextColumn Binding="{Binding idSubgect}" ClipboardContentBinding="{x:Null}" Header="idПредмета"/>
+                        <DataGridTextColumn Binding="{Binding Semester}" ClipboardContentBinding="{x:Null}" Header="Семестр"/>
+                        <DataGridTextColumn Binding="{Binding Access}" ClipboardContentBinding="{x:Null}" Header="Допуск"/>
+                        <DataGridTextColumn Binding="{Binding Estimation}" ClipboardContentBinding="{x:Null}" Header="Оценка"/>
+                        <DataGridTextColumn Binding="{Binding DateDelivery}" ClipboardContentBinding="{x:Null}" Header="Дата Сдачи"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Отделения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_otdel" Margin="-176,283,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infOtdel" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataOtdel" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding NamberDepartment}" ClipboardContentBinding="{x:Null}" Header="№ Отделения"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding Manager}" ClipboardContentBinding="{x:Null}" Header="Заведующий"/>
+                        <DataGridTextColumn Binding="{Binding idManager}" ClipboardContentBinding="{x:Null}" Header="id Заведующего"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Открыть таблицу Специальности" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="50" Click="open_cpec" Margin="-176,333,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infCpec" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataCpec" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idSpecialties}" ClipboardContentBinding="{x:Null}" Header="id Специальности"/>
+                        <DataGridTextColumn Binding="{Binding Year}" ClipboardContentBinding="{x:Null}" Header="Учебный Год"/>
+                        <DataGridTextColumn Binding="{Binding NameSpec}" ClipboardContentBinding="{x:Null}" Header="Название"/>
+                        <DataGridTextColumn Binding="{Binding NumberDepartment}" ClipboardContentBinding="{x:Null}" Header="№ Отделения"/>
+                        <DataGridTextColumn Binding="{Binding NumberGroup}" ClipboardContentBinding="{x:Null}" Header="№ Группы"/>
+                        <DataGridTextColumn Binding="{Binding Type}" ClipboardContentBinding="{x:Null}" Header="Тип"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+            <Button Content="Права Доступа" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="open_prava" Margin="-176,383,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="450" Name="infPrava" VerticalAlignment="Top" Width="597" Margin="203,0,0,0" Visibility="Hidden">
+                <DataGrid Name="AdminDataPrava" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="597" AutoGenerateColumns="False" >
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Binding="{Binding idTeacher}" ClipboardContentBinding="{x:Null}" Header="id Преподавателя"/>
+                        <DataGridTextColumn Binding="{Binding Login}" ClipboardContentBinding="{x:Null}" Header="Логин"/>
+                        <DataGridTextColumn Binding="{Binding Password}" ClipboardContentBinding="{x:Null}" Header="Пароль"/>
+                        <DataGridTextColumn Binding="{Binding NameRole}" ClipboardContentBinding="{x:Null}" Header="Доступ"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+        </Grid>
+        <Button Content="x" HorizontalAlignment="Left" Margin="780,0,0,0" VerticalAlignment="Top" Width="20" Click="end" Background="#E55C5C5C" Height="20"/>
+
+    </Grid>
+</Page>

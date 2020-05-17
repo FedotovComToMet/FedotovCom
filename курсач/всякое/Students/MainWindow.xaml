@@ -5,6 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Students"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Frame x:Name="MainFrame" Source="Pages/Page1.xaml"/>
+        Title="MainWindow" Height="720" Width="1280" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"  MinHeight="720" MinWidth="1280" >
+    
+
+                <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+
+     
+    
 </Window>
