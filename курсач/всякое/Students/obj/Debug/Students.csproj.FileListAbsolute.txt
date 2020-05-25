@@ -55,3 +55,5 @@ C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Stud
 C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Students\obj\Debug\Pages\Instr.baml
 C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Students\obj\Debug\Pages\PravaInstr.g.cs
 C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Students\obj\Debug\Pages\PravaInstr.baml
+C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Students\obj\Debug\MailAdress.g.cs
+C:\Users\mi\Desktop\учеба\Ларионова\курсач\всякое\Students\obj\Debug\MailAdress.baml

@@ -36,5 +36,10 @@ namespace Students.Pages
         {
             MF.Content = new Page1();
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            MF.Content = new Instr();
+        }
     }
 }

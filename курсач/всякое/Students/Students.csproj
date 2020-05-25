@@ -89,6 +89,9 @@
       <DependentUpon>DBStudents.tt</DependentUpon>
     </Compile>
     <Compile Include="Interface.cs" />
+    <Compile Include="MailAdress.xaml.cs">
+      <DependentUpon>MailAdress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
     <Compile Include="TS.cs">
       <DependentUpon>DBStudents.tt</DependentUpon>
     </Compile>
+    <Page Include="MailAdress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

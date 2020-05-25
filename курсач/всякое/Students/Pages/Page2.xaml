@@ -8,38 +8,19 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Page2">
 
-    <Grid Margin="-2,-2,0,2">
-     
+    <Grid Margin="-2,-2,0,2" Width="1280">
+        <Grid.Background>
+            <ImageBrush ImageSource="ФонРег.jpg"/>
+        </Grid.Background>
 
-        <Button x:Name="registr" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="518,438,0,0" VerticalAlignment="Top" Width="252" Height="30" Click="Registracia" FontFamily="Cooper Black" FontSize="20" Opacity="0.6" Background="#FF73B1FF"/>
+
+        <Button x:Name="registr" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="513,343,0,0" VerticalAlignment="Top" Width="252" Height="30" Click="Registracia" FontFamily="Cooper Black" FontSize="20" Opacity="0.6" Background="#FF0071FF"/>
         <TextBlock HorizontalAlignment="Left" Margin="435,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="180" FontFamily="Cooper Black" TextAlignment="Center" FontSize="20" Background="#7F208BDF"><Run Text="Введите Логин"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="435,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="184" FontFamily="Cooper Black" TextAlignment="Center" FontSize="20" Background="#7F208BDF"><Run Text="Введите "/><Run Text="Пароль"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="463,154,0,0" TextWrapping="Wrap" Text="Регистрация" VerticalAlignment="Top" Height="53" Width="333" FontFamily="Cooper Black" TextAlignment="Center" TextDecorations="{x:Null}" FontSize="40" Background="#7F208BDF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="435,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="402" FontFamily="Cooper Black" TextAlignment="Center" Text="Докажите, что вы не робот" FontSize="25" Background="#7F208BDF"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="645,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Name="LogReg">
-            <TextBox.Background>
-                <ImageBrush/>
-            </TextBox.Background>
-        </TextBox>
-        <Button Content="сгенерировать" HorizontalAlignment="Left" Margin="688,385,0,0" VerticalAlignment="Top" Width="108" Height="32" Click="generation" Name="Kapcha">
-            <Button.BorderBrush>
-                <ImageBrush/>
-            </Button.BorderBrush>
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="463,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" >
-            <TextBox.Background>
-                <ImageBrush/>
-            </TextBox.Background>
-        </TextBox>
-        <PasswordBox HorizontalAlignment="Left" Margin="645,283,0,0" VerticalAlignment="Top" Width="192" Height="32" Name="PasReg">
-            <PasswordBox.Background>
-                <ImageBrush/>
-            </PasswordBox.Background>
-        </PasswordBox>
-        <Button Content="Вернуться Назад" HorizontalAlignment="Left" Margin="31,42,0,0" VerticalAlignment="Top" Width="138" Click="RollBack" Opacity="1" Height="33" Background="#B22E2929">
+        <TextBox HorizontalAlignment="Left" Height="36" Margin="645,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Name="LogReg" Background="#FF209FE0"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="645,283,0,0" VerticalAlignment="Top" Width="192" Height="32" Name="PasReg" Background="#FF209FE0"/>
+        <Button Content="Вернуться Назад" HorizontalAlignment="Left" Margin="31,42,0,0" VerticalAlignment="Top" Width="138" Click="RollBack" Opacity="1" Height="33" Background="#B2494949">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

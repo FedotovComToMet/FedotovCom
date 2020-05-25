@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Students.Pages;
 using static Students.Interface;
+using System.IO;
+
 
 namespace Students.Pages
 {
@@ -341,6 +343,7 @@ namespace Students.Pages
 
                 SE.Student.Add(s);
                 SE.SaveChanges();
+                MessageBox.Show("Успешно");
             }
             else
             {
@@ -405,19 +408,100 @@ namespace Students.Pages
         private void SaveStudent(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
        
 
         private void AddGrupp(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataGrupps.Items.Count - SE.Group.Count();
+            if (hm == 2)
+            {
+                Group s = (Group)AdminDataGrupps.Items[AdminDataGrupps.Items.Count - 2];
 
+                s.NumberGroup = 0;
+
+                foreach (Group se in SE.Group)
+
+                {
+
+                    if (s.NumberGroup == se.NumberGroup) s.NumberGroup = s.NumberGroup + 1;
+
+                    if (s.NumberGroup < se.NumberGroup) s.NumberGroup = se.NumberGroup + 1;
+                }
+
+
+                SE.Group.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                if (hm == 1)
+                {
+
+                }
+                else
+                {
+                    //        List<Student> sl = new List<Student>();
+                    //        for (int g = AdminDataStudents.Items.Count - 2; g > AdminDataStudents.Items.Count - hm; g--)
+                    //        {
+                    //            Student s = (Student)AdminDataStudents.Items[g];
+
+                    //            s.NamberStudent = "0";
+
+                    //            foreach (Student se in SE.Student)
+
+                    //            {
+
+                    //                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                    //                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+                    //            }
+
+                    //            sl.Add(s);
+                    //        }
+
+                    //        foreach (Student s in sl)
+                    //        {
+                    //            SE.Student.Add(s);
+                    //        }
+
+                    //        SE.SaveChanges();
+                }
+            }
+
+            //B.Content = hm;
+            /*
+
+            Student s = (Student)AdminDataStudents.Items[AdminDataStudents.Items.Count - 2];
+
+            s.NamberStudent = "0";
+
+            foreach (Student se in SE.Student)
+
+            {
+
+                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+            }
+
+
+            SE.Student.Add(s);
+            SE.SaveChanges();
+            */
         }
+    
 
         private void SaveGrupp(object sender, RoutedEventArgs e)
 
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
     
@@ -425,11 +509,81 @@ namespace Students.Pages
         private void AddUch(object sender, RoutedEventArgs e)
         {
 
-        }
+            int hm = AdminDataUch.Items.Count - SE.Studying.Count();
+            if (hm == 2)
+            {
+                Studying s = (Studying)AdminDataUch.Items[AdminDataUch.Items.Count - 2];
+
+                SE.Studying.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                if (hm == 1)
+                {
+
+                }
+                else
+                {
+                    //        List<Student> sl = new List<Student>();
+                    //        for (int g = AdminDataStudents.Items.Count - 2; g > AdminDataStudents.Items.Count - hm; g--)
+                    //        {
+                    //            Student s = (Student)AdminDataStudents.Items[g];
+
+                    //            s.NamberStudent = "0";
+
+                    //            foreach (Student se in SE.Student)
+
+                    //            {
+
+                    //                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                    //                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+                    //            }
+
+                    //            sl.Add(s);
+                    //        }
+
+                    //        foreach (Student s in sl)
+                    //        {
+                    //            SE.Student.Add(s);
+                    //        }
+
+                    //        SE.SaveChanges();
+                }
+            }
+
+            //B.Content = hm;
+            /*
+
+            Student s = (Student)AdminDataStudents.Items[AdminDataStudents.Items.Count - 2];
+
+            s.NamberStudent = "0";
+
+            foreach (Student se in SE.Student)
+
+            {
+
+                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+            }
+
+
+            SE.Student.Add(s);
+            SE.SaveChanges();
+            */
+        
+
+    }
 
         private void SaveUch(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler(object sender, KeyEventArgs e)
@@ -475,21 +629,89 @@ namespace Students.Pages
                     {
                         SE.Specialty.Remove((Specialty)row);
                     }
+                    SE.SaveChanges();
+                    MessageBox.Show("Успешно");
                 }
 
-                SE.SaveChanges();
 
             }
         }
 
         private void AddPred(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataPred.Items.Count - SE.Subject.Count();
+            if (hm == 2)
+            {
+                Subject s = (Subject)AdminDataPred.Items[AdminDataPred.Items.Count - 2];
 
+                SE.Subject.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                if (hm == 1)
+                {
+
+                }
+                else
+                {
+                    //        List<Student> sl = new List<Student>();
+                    //        for (int g = AdminDataStudents.Items.Count - 2; g > AdminDataStudents.Items.Count - hm; g--)
+                    //        {
+                    //            Student s = (Student)AdminDataStudents.Items[g];
+
+                    //            s.NamberStudent = "0";
+
+                    //            foreach (Student se in SE.Student)
+
+                    //            {
+
+                    //                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                    //                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+                    //            }
+
+                    //            sl.Add(s);
+                    //        }
+
+                    //        foreach (Student s in sl)
+                    //        {
+                    //            SE.Student.Add(s);
+                    //        }
+
+                    //        SE.SaveChanges();
+                }
+            }
+
+            //B.Content = hm;
+            /*
+
+            Student s = (Student)AdminDataStudents.Items[AdminDataStudents.Items.Count - 2];
+
+            s.NamberStudent = "0";
+
+            foreach (Student se in SE.Student)
+
+            {
+
+                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+            }
+
+
+            SE.Student.Add(s);
+            SE.SaveChanges();
+            */
         }
 
         private void SavePred(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler3(object sender, KeyEventArgs e)
@@ -510,11 +732,58 @@ namespace Students.Pages
         private void AddPrepod(object sender, RoutedEventArgs e)
         {
 
+            int hm = AdminDataPrepod.Items.Count - SE.Teacher.Count();
+            if (hm == 2)
+            {
+                Teacher s = (Teacher)AdminDataPrepod.Items[AdminDataPrepod.Items.Count - 2];
+
+                SE.Teacher.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                if (hm == 1)
+                {
+
+                }
+                else
+                {
+                    //        List<Student> sl = new List<Student>();
+                    //        for (int g = AdminDataStudents.Items.Count - 2; g > AdminDataStudents.Items.Count - hm; g--)
+                    //        {
+                    //            Student s = (Student)AdminDataStudents.Items[g];
+
+                    //            s.NamberStudent = "0";
+
+                    //            foreach (Student se in SE.Student)
+
+                    //            {
+
+                    //                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                    //                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+                    //            }
+
+                    //            sl.Add(s);
+                    //        }
+
+                    //        foreach (Student s in sl)
+                    //        {
+                    //            SE.Student.Add(s);
+                    //        }
+
+                    //        SE.SaveChanges();
+                }
+
+            }
         }
 
         private void SavePrepod(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler4(object sender, KeyEventArgs e)
@@ -534,12 +803,59 @@ namespace Students.Pages
 
         private void AddExam(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataExam.Items.Count - SE.Exam1.Count();
+            if (hm == 2)
+            {
+                Exam1 s = (Exam1)AdminDataExam.Items[AdminDataExam.Items.Count - 2];
 
+            SE.Exam1.Add(s);
+            SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
+            else
+            {
+                if (hm == 1)
+                {
+
+                }
+                else
+                {
+                    //        List<Student> sl = new List<Student>();
+                    //        for (int g = AdminDataStudents.Items.Count - 2; g > AdminDataStudents.Items.Count - hm; g--)
+                    //        {
+                    //            Student s = (Student)AdminDataStudents.Items[g];
+
+                    //            s.NamberStudent = "0";
+
+                    //            foreach (Student se in SE.Student)
+
+                    //            {
+
+                    //                if (Convert.ToInt32(s.NamberStudent) == Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(s.NamberStudent) + 1);
+
+
+                    //                if (Convert.ToInt32(s.NamberStudent) < Convert.ToInt32(se.NamberStudent)) s.NamberStudent = Convert.ToString(Convert.ToInt32(se.NamberStudent) + 1);
+                    //            }
+
+                    //            sl.Add(s);
+                    //        }
+
+                    //        foreach (Student s in sl)
+                    //        {
+                    //            SE.Student.Add(s);
+                    //        }
+
+                    //        SE.SaveChanges();
+                }
+
+            }
+
+}
 
         private void SaveExam(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler5(object sender, KeyEventArgs e)
@@ -559,12 +875,21 @@ namespace Students.Pages
 
         private void AddOtdel(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataOtdel.Items.Count - SE.Department1.Count();
+            if (hm == 2)
+            {
+                Department1 s = (Department1)AdminDataOtdel.Items[AdminDataOtdel.Items.Count - 2];
 
+                SE.Department1.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
         }
 
         private void SaveOtdel(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler6(object sender, KeyEventArgs e)
@@ -584,12 +909,21 @@ namespace Students.Pages
 
         private void AddCpec(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataCpec.Items.Count - SE.Specialty.Count();
+            if (hm == 2)
+            {
+                Specialty s = (Specialty)AdminDataCpec.Items[AdminDataCpec.Items.Count - 2];
 
+                SE.Specialty.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
         }
 
         private void SaveCpec(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler7(object sender, KeyEventArgs e)
@@ -609,12 +943,21 @@ namespace Students.Pages
 
         private void AddPrava(object sender, RoutedEventArgs e)
         {
+            int hm = AdminDataPrava.Items.Count - SE.Rols.Count();
+            if (hm == 2)
+            {
+                Rols s = (Rols)AdminDataPrava.Items[AdminDataPrava.Items.Count - 2];
 
+                SE.Rols.Add(s);
+                SE.SaveChanges();
+                MessageBox.Show("Успешно");
+            }
         }
 
         private void SavePrava(object sender, RoutedEventArgs e)
         {
             SE.SaveChanges();
+            MessageBox.Show("Успешно");
         }
 
         private void PreviewKeyDownHandler8(object sender, KeyEventArgs e)
@@ -642,16 +985,15 @@ namespace Students.Pages
             public string NameSubject { get; set; }
             public string Access { get; set; }
             public float Estimation { get; set; }
+            public float SrAr { get; set; }
 
         }
 
         private void seach_Click(object sender, RoutedEventArgs e)
 
-
-
-
-
         {
+            float SrAR = 0;
+
             List<FindMarks> FM = new List<FindMarks>();
 
             string Familia = FamiliaFindUser.Text;
@@ -679,6 +1021,7 @@ namespace Students.Pages
                 {
                     if (S.NamberStudent == E.NamberStudent)
                     {
+                        SrAR += (float)E.Estimation;
                         FindMarks F = new FindMarks();
                         foreach (Subject SU in SE.Subject)
                         {
@@ -694,7 +1037,7 @@ namespace Students.Pages
                                 F.Access = "Допущен";
                                 break;
                             case 0:
-                                F.Access = "Опущен";
+                                F.Access = "Недопущен";
                                 break;
                         }
                         F.Estimation = (float)E.Estimation;
@@ -707,8 +1050,27 @@ namespace Students.Pages
                     }
                 }
             }
+            SrAR = SrAR / FM.Count;
+            foreach (FindMarks F in FM)
+            {
+                if (F == FM[0])
+                {
+                    F.SrAr = SrAR;
+                }
+                else
+                {
 
-            UserPoisk.ItemsSource = FM;
+                }
+            }
+
+            if (FM.Count > 0)
+            {
+                UserPoisk.ItemsSource = FM;
+            }
+            else
+            {
+                MessageBox.Show("Неккоректно введены данные о студенте");
+            }
 
 
         }
@@ -757,6 +1119,7 @@ namespace Students.Pages
         {
 
             {
+                float SrAR = 0;
                 List<FindMarks> FM = new List<FindMarks>();
 
                 string Familia = FamiliaFindUserA.Text;
@@ -784,6 +1147,7 @@ namespace Students.Pages
                     {
                         if (S.NamberStudent == E.NamberStudent)
                         {
+                            SrAR += (float)E.Estimation;
                             FindMarks F = new FindMarks();
                             foreach (Subject SU in SE.Subject)
                             {
@@ -799,7 +1163,7 @@ namespace Students.Pages
                                     F.Access = "Допущен";
                                     break;
                                 case 0:
-                                    F.Access = "Опущен";
+                                    F.Access = "Не допущен";
                                     break;
                             }
                             F.Estimation = (float)E.Estimation;
@@ -812,8 +1176,27 @@ namespace Students.Pages
                         }
                     }
                 }
-
-                UserPoiskA.ItemsSource = FM;
+                SrAR = SrAR / FM.Count;
+                foreach (FindMarks F in FM)
+                {
+                    if (F == FM[0])
+                    {
+                        F.SrAr = SrAR;
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+               
+                if (FM.Count > 0)
+                {
+                    UserPoiskA.ItemsSource = FM;
+                }
+                else
+                {
+                    MessageBox.Show("Неккоректно введены данные о студенте");
+                }
             }
         }
 
@@ -837,6 +1220,51 @@ namespace Students.Pages
             SE.SaveChanges();
         }
 
-       
+        private void print(object sender, RoutedEventArgs e)
+        {
+            StreamWriter SW = new StreamWriter("ХарактеристикаСтудента.txt");
+            List<FindMarks> FM;
+            Window W;
+            switch (Roli)
+            {
+                case "Пользователь":
+
+                    SW.WriteLine ("Статистика по студенту: " + FamiliaFindUser.Text);
+                    FM = (List<FindMarks>)UserPoisk.ItemsSource;
+                    foreach(FindMarks F in FM)
+                    {
+                        SW.WriteLine(F.FerstName + " " + F.MiddleName + " " + F.PhoneNumber + " " + F.NumberGroup + " " + F.NameSubject + " " + F.Access + " " + F.Estimation);
+
+                    }
+
+                    SW.WriteLine("Дата: " + DateTime.Now);
+                    SW.WriteLine("______________________ ");
+                    SW.Close();
+                    MessageBox.Show("Файл создан");
+                    W = new MailAdress();
+                    W.Show();
+
+
+                    break;
+
+                case "Админ":
+
+                    SW.WriteLine("Статистика по студенту: " + FamiliaFindUser.Text);
+                    FM = (List<FindMarks>)UserPoiskA.ItemsSource;
+                    foreach (FindMarks F in FM)
+                    {
+                        SW.WriteLine(F.FerstName + " " + F.MiddleName + " " + F.PhoneNumber + " " + F.NumberGroup + " " + F.NameSubject + " " + F.Access + " " + F.Estimation);
+
+                    }
+
+                    SW.WriteLine("Дата: " + DateTime.Now);
+                    SW.WriteLine("______________________ ");
+                    SW.Close();
+                    MessageBox.Show("Файл создан");
+                    W = new MailAdress();
+                    W.Show();
+                    break;
+            }
+        }
     }
 }

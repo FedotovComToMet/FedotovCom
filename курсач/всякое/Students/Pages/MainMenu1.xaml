@@ -33,15 +33,17 @@
                         <DataGridTextColumn Binding="{Binding NameSubject}" ClipboardContentBinding="{x:Null}" Header="Предмет"/>
                         <DataGridTextColumn Binding="{Binding Access}" ClipboardContentBinding="{x:Null}" Header="Допуск к экзамену"/>
                         <DataGridTextColumn Binding="{Binding Estimation}" ClipboardContentBinding="{x:Null}" Header="Оценка"/>
+                        <DataGridTextColumn Binding="{Binding SrAr}" ClipboardContentBinding="{x:Null}" Header="Статистика"/>
 
                     </DataGrid.Columns>
 
                 </DataGrid>
 
-                <Button Content="сохранить" HorizontalAlignment="Left" Margin="328,601,0,0" VerticalAlignment="Top" Width="288" Height="74" Background="#7F2D2D2E" Click="Button_Click"/>
+                <Button Content="сохранить" HorizontalAlignment="Left" Margin="464,601,0,0" VerticalAlignment="Top" Width="152" Height="74" Background="#7F2D2D2E" Click="Button_Click"/>
                 <Button Content="Закрыть поиск" HorizontalAlignment="Left" Margin="642,601,0,0" VerticalAlignment="Top" Width="288" Height="74" Background="#7F2D2D2E" Click="Clouse_Search"/>
                 <TextBox x:Name="FamiliaFindUser" HorizontalAlignment="Left" Height="32" Margin="0,601,0,0" TextWrapping="Wrap" Text="Введите фамилию" VerticalAlignment="Top" Width="294" BorderBrush="#7FFFFFFF" Background="#92FFFFFF"/>
                 <Button x:Name="seach" Content="найти" HorizontalAlignment="Left" Margin="61,638,0,0" VerticalAlignment="Top" Width="167" Height="37" Click="seach_Click" Background="#7F2D2D2E"/>
+                <Button Content="Печать" HorizontalAlignment="Left" Margin="347,638,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="print"/>
 
 
 
@@ -170,7 +172,7 @@
 
             <Button Content="Найдется все" HorizontalAlignment="Left" Margin="196,594,0,0" VerticalAlignment="Top" Width="156" Height="45" Click="Open_poiskA"/>
 
-            <Grid Name="userpoiskAdmin" Visibility="Hidden" Margin="313,0,0,0">
+            <Grid Name="userpoiskAdmin" Visibility="Visible" Margin="313,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="26*"/>
                     <RowDefinition Height="661*"/>
@@ -191,7 +193,7 @@
                         <DataGridTextColumn Binding="{Binding NameSubject}" ClipboardContentBinding="{x:Null}" Header="Предмет"/>
                         <DataGridTextColumn Binding="{Binding Access}" ClipboardContentBinding="{x:Null}" Header="Допуск к экзамену"/>
                         <DataGridTextColumn Binding="{Binding Estimation}" ClipboardContentBinding="{x:Null}" Header="Оценка"/>
-
+                        <DataGridTextColumn Binding="{Binding SrAr}" ClipboardContentBinding="{x:Null}" Header="Статистика"/>
                     </DataGrid.Columns>
 
                 </DataGrid>
@@ -200,6 +202,7 @@
                 <Button Content="Закрыть поиск" HorizontalAlignment="Left" Margin="639,576.4,0,0" VerticalAlignment="Top" Width="288" Height="74" Background="#7F2D2D2E" Click="Clouse_SearchA" Grid.Row="1" Foreground="#FFC9DFFF"/>
                 <TextBox x:Name="FamiliaFindUserA" HorizontalAlignment="Left" Height="32" Margin="50,576.4,0,0" TextWrapping="Wrap" Text="Введите фамилию" VerticalAlignment="Top" Width="276" BorderBrush="#7FFFFFFF" Background="#92FFFFFF" Grid.Row="1"/>
                 <Button x:Name="seachA" Content="найти" HorizontalAlignment="Left" Margin="50,617.4,0,0" VerticalAlignment="Top" Width="167" Height="37" Click="seach_Click1" Background="#7F2D2D2E" Grid.Row="1" Foreground="#FFC9DFFF" />
+                <Button Content="Печать" HorizontalAlignment="Left" Margin="238,617.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="88" Height="33" Click="print"/>
             </Grid>
 
             <Button Name="B" Content="Открыть таблицу Студенты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Height="66" Click="open_student" Margin="26,27,0,0" Background="#664C4C4C" Foreground="#FFC9DFFF"/>
@@ -435,7 +438,7 @@
 
 
         </Grid>
-        
+
         <Button Content="X" HorizontalAlignment="Left" Margin="1251,0,0,0" VerticalAlignment="Top" Width="29" Click="off" Background="#FF12273D"/>
 
 

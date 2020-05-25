@@ -9,8 +9,8 @@
     <Page.Background>
         <ImageBrush   />
     </Page.Background>
-    
-    
+
+
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
                     <ImageBrush/>
                 </Button.BorderBrush>
             </Button>
-            <Grid Panel.ZIndex="-2" Margin="0,10,0,0" >
+            <Grid Panel.ZIndex="-2" Margin="0,10,0,0" Width="1280" Height="720" >
                 <Grid.Background>
                     <ImageBrush ImageSource="Вход.jpg"/>
                 </Grid.Background>
@@ -53,6 +53,7 @@
                         <ImageBrush/>
                     </Button.BorderBrush>
                 </Button>
+                <CheckBox Content="запомнить меня" Name="readme" HorizontalAlignment="Left" Margin="602,384,0,0" VerticalAlignment="Top" Background="#FFC00000" BorderBrush="Black" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
             </Grid>
 

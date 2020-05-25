@@ -15,14 +15,26 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using Students.Pages;
 using static Students.Interface;
+using System.IO;
 
 namespace Students
 {
     public partial class Page1 : Page
     {
-public Page1()
+        StreamWriter SW;
+        StreamReader SR;
+        FileInfo FileInfo = new FileInfo("Auth.dll");
+        public Page1()
         {
             InitializeComponent();
+            if (FileInfo.Exists)
+            {
+                SR = new StreamReader("Auth.dll");
+                login.Text = SR.ReadLine();
+                Pas.Password = SR.ReadLine();
+                SR.Close();
+
+            }
         }
 
       
@@ -30,6 +42,7 @@ public Page1()
         private void SighIn(object sender, RoutedEventArgs e)
         {
             List<Rols> rols = SE.Rols.ToList();
+
             foreach (Rols r in rols)
             {
                 
@@ -37,6 +50,23 @@ public Page1()
                 {
                     MessageBox.Show("успешно");
                     Roli = r.NameRole;
+                    if (readme.IsChecked == true)
+                    {
+                        SW = new StreamWriter("Auth.dll");
+                        SW.WriteLine(login.Text);
+                        SW.WriteLine(Pas.Password);
+                        SW.Close();
+                    }
+                    else
+                    {
+                        if (FileInfo.Exists)
+                        {
+
+                            FileInfo.Delete();
+
+                        }
+                    }
+
                     MF.Navigate(new MainMenu1());
                 }
             }

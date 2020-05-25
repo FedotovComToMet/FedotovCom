@@ -31,5 +31,17 @@ namespace Students
             MF.Navigate(new Page1());
 
         }
+
+        private void SuperCostil(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.RightAlt)
+            {
+                MessageBox.Show("введены неверные данные");
+            }
+            if (e.Key == Key.PageUp)
+              {
+                MessageBox.Show("неверные данные");
+            }  
+        }
     }
 }
